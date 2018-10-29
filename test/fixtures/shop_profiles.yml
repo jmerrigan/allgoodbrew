@@ -2,14 +2,14 @@
 
 one:
   user: one
-  business_name: MyString
   about: MyText
   location: MyString
   contact_number: MyString
+  business_name: MyString
 
 two:
   user: two
-  business_name: MyString
   about: MyText
   location: MyString
   contact_number: MyString
+  business_name: MyString

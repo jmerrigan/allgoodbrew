@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @shop_profile.user %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @shop_profile.about %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @shop_profile.location %>
+</p>
+
+<p>
+  <strong>Contact number:</strong>
+  <%= @shop_profile.contact_number %>
+</p>
+
+<p>
+  <strong>Business name:</strong>
+  <%= @shop_profile.business_name %>
+</p>
+
+<%= link_to 'Edit', edit_shop_profile_path(@shop_profile) %> |
+<%= link_to 'Back', shop_profiles_path %>
