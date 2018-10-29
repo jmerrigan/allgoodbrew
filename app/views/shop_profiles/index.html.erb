@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <th>Shop</th>
       <th>About</th>
       <th>Location</th>
       <th>Contact number</th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @shop_profiles.each do |shop_profile| %>
       <tr>
-        <td><%= shop_profile.user %></td>
+        <td><%= shop_profile.business_name %></td>
         <td><%= shop_profile.about %></td>
         <td><%= shop_profile.location %></td>
         <td><%= shop_profile.contact_number %></td>

@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @shop_profile.user %>
+  You have created <strong><%= @shop_profile.business_name %></strong>
 </p>
 
 <p>
@@ -20,10 +19,7 @@
   <%= @shop_profile.contact_number %>
 </p>
 
-<p>
-  <strong>Business name:</strong>
-  <%= @shop_profile.business_name %>
-</p>
+
 
 <%= link_to 'Edit', edit_shop_profile_path(@shop_profile) %> |
 <%= link_to 'Back', shop_profiles_path %>
