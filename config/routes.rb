@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#welcome'
+  get '/profile', to: 'shop_profiles#edit'
   resources :products
   resources :shop_profiles
   devise_for :users

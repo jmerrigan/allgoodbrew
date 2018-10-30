@@ -24,7 +24,6 @@
         <td><%= shop_profile.business_name %></td>
         <td><%= link_to 'Show', shop_profile %></td>
         <td><%= link_to 'Edit', edit_shop_profile_path(shop_profile) %></td>
-        <td><%= link_to 'Destroy', shop_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +31,9 @@
 
 <br>
 
-<%= link_to 'New Shop Profile', new_shop_profile_path %>
+<% if current_user.shop_profile.nil? %>  
+  <%= link_to 'New Shop Profile', edit_shop_profile_path(current_user) %>
+<% end %>
+
+
+  
