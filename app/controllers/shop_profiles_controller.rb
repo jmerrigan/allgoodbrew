@@ -27,6 +27,14 @@ class ShopProfilesController < ApplicationController
     end
   end
 
+  def shop_products
+    # @products = @shop_profile.products
+  end
+
+  def shop_orders
+  end
+
+
   # POST /shop_profiles
   # POST /shop_profiles.json
   # def create

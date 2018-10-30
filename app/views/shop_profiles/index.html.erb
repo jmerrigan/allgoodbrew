@@ -17,12 +17,11 @@
   <tbody>
     <% @shop_profiles.each do |shop_profile| %>
       <tr>
-        <td><%= shop_profile.business_name %></td>
+        <td><%= link_to shop_profile.business_name, shop_profile%></td>
         <td><%= shop_profile.about %></td>
         <td><%= shop_profile.location %></td>
         <td><%= shop_profile.contact_number %></td>
         <td><%= shop_profile.business_name %></td>
-        <td><%= link_to 'Show', shop_profile %></td>
         <td><%= link_to 'Edit', edit_shop_profile_path(shop_profile) %></td>
       </tr>
     <% end %>
@@ -31,8 +30,10 @@
 
 <br>
 
-<% if current_user.shop_profile.nil? %>  
-  <%= link_to 'New Shop Profile', edit_shop_profile_path(current_user) %>
+<% if user_signed_in? %>
+  <% if current_user.shop_profile.nil? %>  
+    <%= link_to 'New Shop Profile', edit_shop_profile_path(current_user) %>
+  <% end %>
 <% end %>
 
 
