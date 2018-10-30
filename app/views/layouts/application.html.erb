@@ -18,6 +18,8 @@
         <%= link_to 'My Purchases' %> 
         <% unless current_user.shop_profile.nil? %>  
           <%= link_to 'My Shop', shop_profile_path([current_user.shop_profile]) %> 
+        <% else %>
+          <%= link_to 'Create A Shop', edit_shop_profile_path(current_user) %>
         <% end %>
       <% else %>
         <%= link_to('Login', new_user_session_path)  %>
