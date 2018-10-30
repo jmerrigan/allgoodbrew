@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :business_name %>
+    <%= form.text_field :business_name %>
+  </div>
+
+  <div class="field">
     <%= form.label :about %>
     <%= form.text_area :about %>
   </div>
@@ -24,11 +29,6 @@
   <div class="field">
     <%= form.label :contact_number %>
     <%= form.text_field :contact_number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :business_name %>
-    <%= form.text_field :business_name %>
   </div>
 
   <div class="actions">

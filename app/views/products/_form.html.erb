@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :style %>
-    <%= form.text_field :style %>
+    <%= form.collection_select :style_id, Style.all, :id, :name, :prompt => true %>
   </div>
 
   <div class="field">
