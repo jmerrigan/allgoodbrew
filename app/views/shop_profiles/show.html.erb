@@ -20,8 +20,10 @@
   <%= @shop_profile.contact_number %>
 </p>
 
-<%= link_to 'Edit', edit_shop_profile_path(@shop_profile) %> |
-<%= link_to 'Back', shop_profiles_path %>
+<% if current_user == @shop_profile.user %>
+  <%= link_to 'Edit', edit_shop_profile_path(@shop_profile) %> 
+<% end %>
+
 
 <br><br>
 
@@ -29,6 +31,18 @@
   <%= link_to 'New Product', new_product_path %>
   <%= link_to 'My Shop Orders' %>
   <%= link_to 'My Products', profile_products_path %> 
+<% else %>
+  <h3>Products</h3>
+  <% @shop_profile.products.each do |product| %>
+    <td> <%= link_to image_tag(product.image, width: '100'), product %></td>
+    <td><%= link_to product.name, product %></td>
+    <td><%= product.price %></td>
+    <td><%= product.shop_profile.business_name %></td>
+    <td><%= product.style.name %></td>
+    <td><%= product.description %></td>
+  <% end %>
 <% end %>
+
+
 
 
