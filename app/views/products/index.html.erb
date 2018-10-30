@@ -20,7 +20,7 @@
       <tr>
         <td> <%= link_to image_tag(product.image, width: '100'), product %>
         <td><%= link_to product.name, product %></td>
-        <td><%= product.price %></td>
+        <td><%= number_to_currency(product.price/100.0) %></td>
         <td><%= product.shop_profile.business_name %></td>
         <td><%= product.style.name %></td>
         <td><%= product.description %></td>
