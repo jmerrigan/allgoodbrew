@@ -12,9 +12,12 @@
   <body>
     <nav>
       <% if user_signed_in? %>
-        <p> Welcome, <%= current_user.first_name %> <%= current_user.last_name %> 
-        (<%= link_to('Logout', destroy_user_session_path, method: :delete) %>)        
-        <% else %>
+        <p>
+        Welcome, <%= current_user.first_name %> <%= current_user.last_name %> 
+        (<%= link_to('Logout', destroy_user_session_path, method: :delete) %>) 
+        <%= link_to 'My Purchases' %> 
+        <%= link_to 'My Shop', shop_profile_path([current_user.shop_profile]) %>   
+      <% else %>
         <%= link_to('Login', new_user_session_path)  %>
         </p>
       <% end %>

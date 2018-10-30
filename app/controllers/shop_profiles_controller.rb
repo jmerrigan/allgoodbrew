@@ -1,4 +1,5 @@
 class ShopProfilesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_shop_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /shop_profiles
