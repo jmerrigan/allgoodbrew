@@ -3,13 +3,17 @@
 one:
   shop_profile: one
   user: one
-  order_info: MyText
-  shop_name: MyString
-  total_cost: MyString
+  product: one
+  quantity: 1
+  product_title: MyString
+  product_cost: 1
+  shipping_cost: 1
 
 two:
   shop_profile: two
   user: two
-  order_info: MyText
-  shop_name: MyString
-  total_cost: MyString
+  product: two
+  quantity: 1
+  product_title: MyString
+  product_cost: 1
+  shipping_cost: 1
