@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
     @products << Product.where('lower(name) LIKE ?', "%#{params[:search].downcase}%")
     @products << Product.where('lower(description) LIKE ?', "%#{params[:search].downcase}%")
     # @products << Style.where('lower(name) LIKE ?', "%#{params[:search].downcase}%")
+    @products.uniq! { |p| p.ids}
   end
 
   # GET /products/1
