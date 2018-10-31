@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
     def create
         @buyer = User.find(params[:user_id])
         @product = Product.find(params[:product_id])
+        ProductMailer.with(buyer: current_user, seller: @product.shop_profile.user, product: @product).new_purchase.deliver_now
         
         customer = Stripe::Customer.create(
             :email => params[:stripeEmail],
