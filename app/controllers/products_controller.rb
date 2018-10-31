@@ -8,6 +8,13 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def products_search
+    @products = []
+    @products << Product.where('lower(name) LIKE ?', "%#{params[:search].downcase}%")
+    @products << Product.where('lower(description) LIKE ?', "%#{params[:search].downcase}%")
+    # @products << Style.where('lower(name) LIKE ?', "%#{params[:search].downcase}%")
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show
@@ -76,7 +83,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      result = params.require(:product).permit(:name, :price, :shop_profile_id, :style_id, :description, :image)
+      result = params.require(:product).permit(:name, :price, :shop_profile_id, :style_id, :description, :image, :search)
       result[:price] = result[:price].to_f * 100.0
       result
     end

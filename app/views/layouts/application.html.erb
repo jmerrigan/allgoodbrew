@@ -12,19 +12,27 @@
   <body>
     <nav>
       <% if user_signed_in? %>
-        <p>
-        Welcome, <%= current_user.first_name %> <%= current_user.last_name %> 
-        (<%= link_to('Logout', destroy_user_session_path, method: :delete) %>) 
-        <%= link_to 'My Purchases', mypurchases_path %> 
-        <% unless current_user.shop_profile.nil? %>  
-          <%= link_to 'My Shop', shop_profile_path([current_user.shop_profile]) %> 
-        <% else %>
-          <%= link_to 'Create A Shop', edit_shop_profile_path(current_user) %>
-        <% end %>
+          <p>
+            Welcome, <%= current_user.first_name %> <%= current_user.last_name %> 
+            (<%= link_to('Logout', destroy_user_session_path, method: :delete) %>) 
+            <%= link_to 'My Purchases', mypurchases_path %> 
+              <% unless current_user.shop_profile.nil? %>  
+                <%= link_to 'My Shop', shop_profile_path([current_user.shop_profile]) %> 
+              <% else %>
+                <%= link_to 'Create A Shop', edit_shop_profile_path(current_user) %>
+              <% end %>
       <% else %>
-        <%= link_to('Login', new_user_session_path)  %>
-        </p>
+            <%= link_to('Login', new_user_session_path)  %>
+          </p>
       <% end %>
+
+      <span>
+          <%= form_tag(products_search_path, method: :get) do %>
+            <%= text_field_tag(:search, params[:search]) %>
+            <%= submit_tag ("Search") %>
+          <% end %>
+      </span>
+
       <p>
       <%= link_to 'View All Shops', shop_profiles_path %>
       <%= link_to 'View All Products', products_path %>
