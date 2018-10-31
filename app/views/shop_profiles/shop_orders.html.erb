@@ -1,3 +1,5 @@
 <% current_user.shop_profile.orders.each do |order| %>
-    <%= order %>
+    <%= order.product_title %>
+    <%= number_to_currency(order.product_cost / 100.0) %>
+    <%= order.user.email %>
 <% end %>

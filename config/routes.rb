@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'shop_profiles#edit'
   get '/profile/products', to: 'shop_profiles#shop_products'
   get '/profile/orders', to: 'shop_profiles#shop_orders'
+  get '/mypurchases', to: 'products#my_purchases'
   resources :products
   resources :shop_profiles
   devise_for :users

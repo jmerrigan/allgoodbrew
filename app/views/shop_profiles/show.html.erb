@@ -29,7 +29,7 @@
 
 <% if current_user == @shop_profile.user %>
   <%= link_to 'New Product', new_product_path %>
-  <%= link_to 'My Shop Orders' %>
+  <%= link_to 'My Shop Orders', profile_orders_path %>
   <%= link_to 'My Products', profile_products_path %> 
 <% else %>
   <h3>Products</h3>
