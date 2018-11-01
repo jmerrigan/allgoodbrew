@@ -13,9 +13,17 @@
   <body>
     <nav>
       <a href="/"><img src="/assets/agb-logo-orange.svg"></a>
+    
+       <div id="search">
+        <%= form_tag(products_search_path, method: :get, :class => "search-box") do %>
+          <%= text_field_tag(:search, params[:search], placeholder: "Search...", :class => "search-box-input") %>
+        <% end %>
+        </div>
+
+
       <div class="nav-buttons">
       <% if user_signed_in? %>
-            Welcome, <%= current_user.first_name %> <%= current_user.last_name %> 
+    
               <%= link_to('LOGOUT', destroy_user_session_path, method: :delete, :class => "button") %> 
               <%= link_to 'MY PURCHASES', mypurchases_path, :class => "button" %> 
             <% unless current_user.shop_profile.nil? %> 
@@ -37,11 +45,6 @@
         <%= link_to 'View All Products', products_path, :class => "button" %>
         </div>
 
-        <div id="search">
-        <%= form_tag(products_search_path, method: :get, :class => "search-box") do %>
-          <%= text_field_tag(:search, params[:search], placeholder: "Search...", :class => "search-box-input") %>
-        <% end %>
-        </div>
       </div>
 
       <div id="yield">
