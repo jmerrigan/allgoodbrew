@@ -7,40 +7,47 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
   </head>
 
   <body>
     <nav>
-      <img src="/assets/agb-logo.svg">
+      <a href="/"><img src="/assets/agb-logo.svg"></a>
+      <div class="nav-buttons">
       <% if user_signed_in? %>
             Welcome, <%= current_user.first_name %> <%= current_user.last_name %> 
-              <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "button") %> 
-              <%= link_to 'My Purchases', mypurchases_path, :class => "button" %> 
+              <%= link_to('LOGOUT', destroy_user_session_path, method: :delete, :class => "button") %> 
+              <%= link_to 'MY PURCHASES', mypurchases_path, :class => "button" %> 
             <% unless current_user.shop_profile.nil? %> 
-                <%= link_to 'My Shop', shop_profile_path([current_user.shop_profile]), :class => "button" %> 
+                <%= link_to 'MY SHOP', shop_profile_path([current_user.shop_profile]), :class => "button" %> 
               <% else %>
-                <%= link_to 'Create A Shop', edit_shop_profile_path(current_user, :class => "button") %>
+                <%= link_to 'BREW A SHOP', edit_shop_profile_path(current_user), :class => "button" %>
               <% end %>
       <% else %>
-            <%= link_to('Login', new_user_session_path, :class => "button")  %>        
+            <%= link_to('LOGIN', new_user_session_path, :class => "button")  %>        
       <% end %>
+      </div>
    </nav>
 
+    <div id="yield">
 
-      <div id="all-option">
-      <%= link_to 'View All Shops', shop_profiles_path %>
-      <%= link_to 'View All Products', products_path %>
+      <div id="page-options">
+        <div id="all-options">
+        <%= link_to 'View All Shops', shop_profiles_path, :class => "button" %>
+        <%= link_to 'View All Products', products_path, :class => "button" %>
+        </div>
+
+        <div id="search">
+        <%= form_tag(products_search_path, method: :get) do %>
+          <%= text_field_tag(:search, params[:search]) %>
+          <%= submit_tag ("Search") %>
+        <% end %>
+        </div>
       </div>
 
-      <div id="search">
-      <%= form_tag(products_search_path, method: :get) do %>
-        <%= text_field_tag(:search, params[:search]) %>
-        <%= submit_tag ("Search") %>
-      <% end %>
-      </div>
+        <%= yield %>
 
-  
-    <%= yield %>
-   <p> <%= link_to 'Back', :back %> </p>
+    </div>
+
   </body>
 </html>
