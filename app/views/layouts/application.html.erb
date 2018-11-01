@@ -29,7 +29,7 @@
       </div>
    </nav>
 
-    <div id="yield">
+    <div id="page-content">
 
       <div id="page-options">
         <div id="all-options">
@@ -38,15 +38,17 @@
         </div>
 
         <div id="search">
-        <%= form_tag(products_search_path, method: :get) do %>
-          <%= text_field_tag(:search, params[:search]) %>
-          <%= submit_tag ("Search") %>
+        <%= form_tag(products_search_path, method: :get, :class => "search-box") do %>
+          <%= text_field_tag(:search, params[:search], placeholder: "Search...", :class => "search-box-input") %>
         <% end %>
         </div>
       </div>
 
-        <%= yield %>
+      <div id="yield">
 
+
+        <%= yield %>
+      </div>
     </div>
 
   </body>

@@ -24,14 +24,21 @@
      background: #FF520b;
  }
 
- #yield {
+ #page-content {
      background-color: white;
      height: 83vh;
      margin-left: 5%;
      margin-right: 5%;
      border-radius: 35px;
+     display: block;
+ }
+
+ #yield {
      display: flex;
+     align-content: center;
      justify-content: center;
+     flex-wrap: wrap;
+     margin-top: 30px;
  }
 
  #page-options {
@@ -41,16 +48,20 @@
  nav {
      display: flex;
      justify-content: space-between;
-     height: 70px;
-     margin-top: 0px;
+     height: 11vh;
+ }
+
+ .nav-buttons {
+     margin-right: 60px;
  }
 
  nav img {
-     height: 80%;
-     margin-left: 10px;
-     /* vertical-align: middle; */
+     height: 60%;
+     margin-left: 60px;
      padding-top: 5px;
      padding-bottom: 5px; 
+     margin-top: 9px;
+
  }
 
  .button {
@@ -103,7 +114,26 @@ a:hover {
     text-align: center;
 }
 
+#all-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 #search {
     display: flex;
     justify-content: center;
+    
+}
+
+#search .search-box {
+    width: 38%;
+}
+
+#search .search-box-input {
+    width: 100%;
+    border-radius: 20px;
+    border: 0.5px solid #FF520b;
+    height: 35px;
+    text-align: center;
 }
