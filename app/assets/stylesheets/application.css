@@ -21,7 +21,7 @@
 
  body {
      margin: 0px;
-     background: #FF520b;
+     background: #E5E5E5;
  }
 
  #page-content {
@@ -29,7 +29,7 @@
      height: 83vh;
      margin-left: 5%;
      margin-right: 5%;
-     border-radius: 35px;
+     /* border-radius: 35px; */
      display: block;
  }
 
