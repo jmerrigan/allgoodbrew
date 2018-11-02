@@ -1,3 +1,75 @@
 // Place all the styles related to the ShopProfiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.index {
+    color: #FF520b;
+    width: 100vw;
+    font-family: 'Barlow Condensed', sans-serif;
+    margin-top: 5vh;
+}
+
+#title {
+    text-align: center;
+    font-size: 35px;
+}
+
+#all-shops {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    // padding-left: 12%;
+}
+
+#shop {
+    background-color: #E5E5E5;
+    border-radius: 20px;
+    opacity: 1.0;
+    padding: 15px;
+    width: 200px;
+    height: 225px;
+    margin-bottom: 5px;
+}
+
+#shop li {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+
+#shop-name a {
+    font-size: 25px;
+    color: #FF520b;
+    text-decoration: none;
+}
+
+#shop-name a:hover {
+    color: black;
+}
+
+
+#location {
+    font-size: 15px;
+    color: black;
+    font-style: italic;
+}
+
+#about {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    font-size: 15px;
+    text-align: center;
+}
+
+#contact {
+    color: #FF520b;
+    font-size: 15px;
+}
+
+#shop:hover {
+    background-color: #F4C1B2;
+}

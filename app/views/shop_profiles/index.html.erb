@@ -1,35 +1,24 @@
 <p id="notice"><%= notice %></p>
+<div class="index">
+  <h1 id="title">Shop Profiles</h1>
+  <br> <br>
+    
+  <div id="all-shops">
+      <% @shop_profiles.each do |shop_profile| %>
 
-<h1>Shop Profiles</h1>
+        <% unless shop_profile.business_name.nil? %>
+        <div id="shop">
+            <li id="shop-name"><%= link_to shop_profile.business_name, shop_profile%></li>
+            <li id="location"><%= shop_profile.location %></li>            
+            <li id="about"><%= shop_profile.about %></li>
+            <li id="contact"><%= shop_profile.contact_number %></li>
+         </div>   
 
-<table>
-  <thead>
-    <tr>
-      <th>Shop</th>
-      <th>About</th>
-      <th>Location</th>
-      <th>Contact number</th>
-      <th>Business name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <% end %>
 
-  <tbody>
-    <% @shop_profiles.each do |shop_profile| %>
-
-      <% unless shop_profile.business_name.nil? %>
-        <tr>
-          <td><%= link_to shop_profile.business_name, shop_profile%></td>
-          <td><%= shop_profile.about %></td>
-          <td><%= shop_profile.location %></td>
-          <td><%= shop_profile.contact_number %></td>
-          <td><%= shop_profile.business_name %></td>
-        </tr>
       <% end %>
-
-    <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 
 
