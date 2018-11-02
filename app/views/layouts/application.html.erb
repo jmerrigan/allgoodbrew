@@ -12,7 +12,9 @@
 
   <body>
     <nav>
-      <a href="/"><img src="/assets/agb-logo-orange.svg"></a>
+      <div id="logo">
+        <a href="/"><img src="/assets/agb-logo-orange.svg"></a>
+      </div>
     
        <div id="search">
         <%= form_tag(products_search_path, method: :get, :class => "search-box") do %>
@@ -37,21 +39,8 @@
       </div>
    </nav>
 
-    <div id="page-content">
-
-      <div id="page-options">
-        <div id="all-options">
-        <%= link_to 'View All Shops', shop_profiles_path, :class => "button" %>
-        <%= link_to 'View All Products', products_path, :class => "button" %>
-        </div>
-
-      </div>
-
-      <div id="yield">
-
-
+    <div id="yield">
         <%= yield %>
-      </div>
     </div>
 
   </body>

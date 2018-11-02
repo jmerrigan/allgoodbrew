@@ -24,15 +24,6 @@
      background: #white;
  }
 
- #page-content {
-     background-color: white;
-     height: 83vh;
-     /* margin-left: 5%;
-     margin-right: 5%; */
-     /* border-radius: 35px; */
-     display: block;
- }
-
  #yield {
      display: flex;
      align-content: center;
@@ -41,27 +32,29 @@
      margin-top: 30px;
  }
 
- #page-options {
-    display: block;
- }
-
  nav {
-     display: flex;
-     justify-content: space-between;
-     height: 11vh;
+     height: 8vh;
+     display: grid;
+     grid-template-columns: 3(1fr);
  }
 
  .nav-buttons {
-     margin-right: 60px;
+     grid-column-start: 3;
+     grid-column-end: 4;
+     display: flex;
+     justify-content: center;
  }
 
- nav img {
-     height: 60%;
-     margin-left: 60px;
-     padding-top: 5px;
-     padding-bottom: 5px; 
-     margin-top: 9px;
+#logo {
+     grid-column-start: 1;
+     grid-column-end: 2;
+     display: flex;
+     justify-content: center;
+ }
 
+ #logo img {
+    height: 8vh;
+    margin-top: 2vh;
  }
 
  .button {
@@ -110,21 +103,11 @@
     border: #E5E5E5 1px solid;
 }
 
-#all-options .button {
-    width: 130px;
-    text-align: center;
-}
-
-#all-options {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 #search {
-    display: flex;
-    justify-content: center;
-    
+    grid-column-start: 2;
+     grid-column-end: 3;
+     display: flex;
+     justify-content: center;
 }
 
 #search .search-box {
