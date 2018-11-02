@@ -40,7 +40,9 @@
   <%= form_tag charges_path do %>
 
     <%= hidden_field_tag(:product_id, @product.id) %>
+  <% if user_signed_in? %>
     <%= hidden_field_tag(:user_id, current_user.id) %>
+  <% end %>
 
     <article>
       <% if flash[:error].present? %>

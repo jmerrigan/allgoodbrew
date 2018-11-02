@@ -1,3 +1,80 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index {
+    color: #FF520b;
+    width: 100vw;
+    font-family: 'Barlow Condensed', sans-serif;
+    margin-top: 5vh;
+}
+
+#title {
+    text-align: center;
+    font-size: 35px;
+}
+
+#all-products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    // padding-left: 12%;
+}
+
+#product {
+    background-color: #E5E5E5;
+    border-radius: 20px;
+    opacity: 1.0;
+    padding: 15px;
+    width: 250px;
+    height: 350px;
+    margin-bottom: 5px;
+}
+
+#product li {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+#product li img {
+    opacity: 1;
+}
+
+#product-name a {
+    font-size: 25px;
+    color: #FF520b;
+    text-decoration: none;
+}
+
+#product-name a:hover {
+    color: black;
+}
+
+#business-name {
+    color: black;
+    font-size: 17px;
+}
+
+#style {
+    font-size: 15px;
+    color: black;
+    font-style: italic;
+}
+
+#description {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    font-size: 15px;
+    text-align: center;
+}
+
+#price {
+    color: black;
+    font-weight: 1000;
+    font-size: 17px;
+}
+
+
