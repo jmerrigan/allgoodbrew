@@ -1,5 +1,5 @@
 class ChargesController < ApplicationController
-
+    before_action :authenticate_user!, only: [:create, :new]
     def new
     end
     
@@ -27,6 +27,10 @@ class ChargesController < ApplicationController
              product_cost: @product.price
             }
         )
+        
+        @product.quantity = @product.quantity -= 1
+        @product.save
+            
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path

@@ -84,7 +84,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      result = params.require(:product).permit(:name, :price, :shop_profile_id, :style_id, :description, :image, :search)
+      result = params.require(:product).permit(:name, :price, :shop_profile_id, :style_id, :description, :quantity, :image, :search)
       result[:price] = result[:price].to_f * 100.0
       result
     end

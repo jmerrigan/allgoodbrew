@@ -18,6 +18,7 @@
               <li id="business-name"><%= product.shop_profile.business_name %></li>
               <li id="style"><%= product.style.name %></li>
               <li id="description"><%= product.description %></li>
+              <li id="quantity">Qty: <%= product.quantity %><li>
               <li id="price"><%= number_to_currency(product.price/100.0) %></li>
               <% if current_user == product.shop_profile.user %>
                 <li><%= link_to 'Edit', edit_product_path(product) %></li>
