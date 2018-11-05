@@ -1,5 +1,12 @@
-<% current_user.shop_profile.orders.each do |order| %>
-    <%= order.product_title %>
-    <%= number_to_currency(order.product_cost / 100.0) %>
-    <%= order.user.email %>
-<% end %>
+
+<div class="shops">
+<h3 id="title">Your orders</h3>
+    <div id="orders">
+        <% current_user.shop_profile.orders.each do |order| %>
+            <li id="product-name"><%= order.product_title %></li>
+            <li id="price"><%= number_to_currency(order.product_cost / 100.0) %></li>
+            <li id="email"><%= order.user.email %></li>
+            <br>
+        <% end %>
+    </div>
+</div>

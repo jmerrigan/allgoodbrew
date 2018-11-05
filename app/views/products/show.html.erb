@@ -1,69 +1,54 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="products">
+  <div id="all-products">
+    <div id="product">
+            
+    <li> <%= link_to image_tag(@product.image, width: '200', height: '100'), @product %></li>
 
-<p>
-  <strong>Shop:</strong>
-  <%= @product.shop_profile.business_name %>
-</p>
+      <li id="product-name"><%= link_to @product.name, @product %></li>
+      <li id="business-name"><%= @product.shop_profile.business_name %></li>
+      <li id="style"><%= @product.style.name %></li>
+      <li id="description"><%= @product.description %></li>
+      <li id="quantity">Qty: <%= @product.quantity %><li>
+      <li id="price"><%= number_to_currency(@product.price/100.0) %></li>
+      <% if current_user == @product.shop_profile.user %>
+        <li><%= link_to 'Edit', edit_product_path(@product) %></li>
+        <li><%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 
-<p>
-  <strong>Style:</strong>
-  <%= @product.style.name %>
-</p>
+    <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+          
+  <br><br>
 
-<p>
-  <%= image_tag @product.image, width: '300' %>
-</p>
+    <div id="payment">
+      <% unless current_user == @product.shop_profile.user %>
+        
+        <%= form_tag charges_path do %>
 
-<p>
-  <strong>Qty:</strong>
-  <%= @product.quantity %>
-</p>
+          <%= hidden_field_tag(:product_id, @product.id) %>
+        <% if user_signed_in? %>
+          <%= hidden_field_tag(:user_id, current_user.id) %>
+        <% end %>
 
-  <p>
-    <strong>Price:</strong>
-    <%= number_to_currency(@product.price/100.0) %>
-  </p>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+          </article>
 
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="<% @product.name %>"
+                  data-amount="<%= @product.price %>"
+                  data-currency="AUD"
+                  data-locale="auto"></script>
+        <% end %>
 
-<% if current_user == @product.shop_profile.user %>
-  
-
-  <%= link_to 'Edit', edit_product_path(@product) %>
-
-<% else %>
-
-  <%= form_tag charges_path do %>
-
-    <%= hidden_field_tag(:product_id, @product.id) %>
-  <% if user_signed_in? %>
-    <%= hidden_field_tag(:user_id, current_user.id) %>
-  <% end %>
-
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
-        </div>
       <% end %>
-    </article>
-
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="<% @product.name %>"
-            data-amount="<%= @product.price %>"
-            data-currency="AUD"
-            data-locale="auto"></script>
-  <% end %>
-
-<% end %>
-
+      </div>
+    </div>
+  </div>
+</div>

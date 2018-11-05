@@ -1,8 +1,16 @@
-<% current_user.shop_profile.products.each do |product| %>
-    <td><%= link_to image_tag(product.image, width: '100'), product %></td>
-    <td><%= link_to product.name, product %></td>
-    <td><%= number_to_currency(product.price / 100.0) %></td>
-    <td><%= product.shop_profile.business_name %></td>
-    <td><%= product.style.name %></td>
-    <td><%= product.description %></td>
-<% end %>
+
+<div class="shops">
+<h3 id="title">Your Products</h3>
+    <div id="all-products">
+        <div id="product">
+            <% current_user.shop_profile.products.each do |product| %>
+                <li><%= link_to image_tag(product.image, width: '100'), product %></li>
+                <li id="product-name"><%= link_to product.name, product %></li>
+                <li id="price"><%= number_to_currency(product.price / 100.0) %></li>
+                <li id="business-name"><%= product.shop_profile.business_name %></li>
+                <li id="style"><%= product.style.name %></li>
+                <li id="description"><%= product.description %></li>
+            <% end %>
+        </div>
+    </div>
+</div>

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+scroll-behavior: smooth
 
  * {
      margin: 0px;
@@ -64,7 +65,7 @@
 	border-radius: 10px;
 	border: 1px solid white;
 	display: inline-block;
-	color : #FF520b;
+	color: #FF520b;
 	font-family: 'Barlow Condensed', sans-serif;
 	font-size: 17px;
 	padding: 11px 5px;
