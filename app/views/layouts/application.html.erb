@@ -16,6 +16,7 @@
         <a href="/"><img src="/assets/agb-logo-orange.svg"></a>
       </div>
     
+    
        <div id="search">
         <%= form_tag(products_search_path, method: :get, :class => "search-box") do %>
           <%= text_field_tag(:search, params[:search], placeholder: "Search...", :class => "search-box-input") %>
