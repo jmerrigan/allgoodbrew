@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-scroll-behavior: smooth
+/* scroll-behavior: smooth */
 
  * {
      margin: 0px;
