@@ -5,14 +5,12 @@
 .products {
     color: #FF520b;
     width: 100vw;
-    font-family: 'Barlow Condensed', sans-serif;
     margin-top: 5vh;
 }
 
 .title {
     text-align: center;
     font-size: 35px;
-    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .all-products {
@@ -23,12 +21,9 @@
 }
 
 .product {
-    background-color: #E5E5E5;
-    border-radius: 20px;
-    opacity: 1;
-    padding: 15px;
-    width: 250px;
-    height: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 500px;
     margin-bottom: 5px;
     overflow: scroll;
 }
@@ -41,6 +36,10 @@
 
 .product li img {
     opacity: 1;
+}
+
+.product:hover {
+    background-color: #E8E8EE;
 }
 
 .product-name {
@@ -80,10 +79,6 @@
     color: black;
     font-weight: 1000;
     font-size: 17px;
-}
-
-.product:hover {
-    background-color: #F4C1B2;
 }
 
 #payment {

@@ -20,6 +20,10 @@ html {
     box-sizing: border-box;
 }
 
+* {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
  *, *:before, *:after {
      margin: 0px;
      padding: 0px;
@@ -57,6 +61,7 @@ html {
      grid-column-end: 4;
      display: flex;
      justify-content: center;
+     align-items: center;
  }
 
 #logo {
@@ -64,6 +69,7 @@ html {
      grid-column-end: 2;
      display: flex;
      justify-content: center;
+     align-items: center;
  }
 
  #logo img {
@@ -76,17 +82,12 @@ html {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	border: 1px solid white;
 	display: inline-block;
 	color: #FF520b;
-	font-family: 'Barlow Condensed', sans-serif;
 	font-size: 17px;
 	padding: 11px 5px;
     text-decoration: none;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 15px 5px;
     letter-spacing: 0.5px;
 }
 
@@ -114,39 +115,34 @@ html {
 
 #search {
     grid-column-start: 2;
-     grid-column-end: 3;
-     display: flex;
-     justify-content: center;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #search .search-box {
     width: 30vw;
-    margin-top: 20px;
 }
 
 #search .search-box-input {
     width: 100%;
-    border-radius: 20px;
     border: 0.5px solid #FF520b;
     height: 35px;
     text-align: center;
 }
 
 .user-form {
-    font-family: 'Barlow Condensed', sans-serif;
     font-size: 17px;
     text-align: center;
     color: #FF520b;
     margin-top: 4%;
-    background-color:#E5E5E5;
-    opacity: 0.7;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 2%;
-    border-radius: 15px;
+    
 }
 
 .user-form input {
-    border: none;
-    border-radius: 20px;
     height: 20px;
     width: 200px;
     padding-left: 5px;
@@ -184,7 +180,6 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Barlow Condensed', sans-serif;
     font-size: 15px;  
 }
 

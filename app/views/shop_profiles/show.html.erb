@@ -20,31 +20,36 @@
 
   <br>
 
-  <div class="edit-links">
-    <% if current_user == @shop_profile.user %>
+  <% if current_user == @shop_profile.user %>
+
+    <div class="edit-links">
       <p><%= link_to 'New Product', new_product_path %></p>
       <p><%= link_to 'My Shop Orders', profile_orders_path %></p>
       <p><%= link_to 'My Products', profile_products_path %></p> 
-    <% else %>
-      </div> 
+    </div> 
 
-      <p class="title">Products</p>
-      <br><br>
+  <% else %>
 
-      <div class="all-products">
-        <% @shop_profile.products.each do |product| %>
-          <div class="product">
-            <li> <%= link_to image_tag(product.image, width: '100'), product %></li>
-            <li class="product-name"><%= link_to product.name, product %></li>
-            <li class="price"><%= product.price %></li>
-            <li><%= product.quantity %></li>
-            <li class="business-name"><%= product.shop_profile.business_name %></li>
-            <li class="style"><%= product.style.name %></li>
-            <li class="description"><%= product.description %></li>
-          </div>  
-          <% end %>
+    <p class="title">Products</p>
+    <br><br>
 
-      </div>
+    <div class="all-products">
+    
+      <% @shop_profile.products.each do |product| %>
+
+        <div class="product">
+          <li> <%= link_to image_tag(product.image, width: '100'), product %></li>
+          <li class="product-name"><%= link_to product.name, product %></li>
+          <li class="price"><%= product.price %></li>
+          <li><%= product.quantity %></li>
+          <li class="business-name"><%= product.shop_profile.business_name %></li>
+          <li class="style"><%= product.style.name %></li>
+          <li class="description"><%= product.description %></li>
+        </div>  
+        
+        <% end %>
+
+    </div>
 
   <% end %>
 
