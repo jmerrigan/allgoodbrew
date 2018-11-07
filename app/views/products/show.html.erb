@@ -33,6 +33,7 @@
 
     <div id="payment">
       <% unless current_user == @product.shop_profile.user %>
+
         <% if @product.quantity > 0 %>
         <%= form_tag charges_path do %>
 
@@ -48,15 +49,19 @@
               </div>
             <% end %>
           </article>
-
+          
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                   data-description="<% @product.name %>"
                   data-amount="<%= @product.price %>"
                   data-currency="AUD"
-                  data-locale="auto"></script>
+                  data-locale="auto"
+                  data-billing-address="true">
+
+                  </script>
+          <% end %>
         <% end %>
-      <% end %>
       <% end %>
       </div>
     </div>

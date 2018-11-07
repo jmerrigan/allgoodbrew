@@ -1,9 +1,11 @@
-<p> <%= link_to 'Home', root_path %> </p>
+<div class="charges">
+    <h2>Thanks <%= current_user.first_name %>!</h2>
+    <br>
+    <p><%= link_to image_tag(@product.image, width: '300', height: '200'), @product %></p>
+    <br>
+    <p> You have purchased a <%= @product.name %> </p>
+    <p> Your card has been charged  <strong><%= number_to_currency(@product.price/100.0) %> </strong> </p>
+    <br>
+    <p id="agb-thanks">We hope you enjoy your beer. Thanks from all of us at AGB!</p>
+</div>
 
-<h2>Thanks, you paid 
-    <strong>
-        <%= number_to_currency(@product.price/100.0) %>
-    </strong>!
-</h2>
-
-<p> You have purchased a <%= @product.name %> </p>
