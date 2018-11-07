@@ -8,11 +8,11 @@
 
     <div id="all-products">
   
-        <% @products.each do |product| %>
+      <% @products.each do |product| %>
 
         <div id="product">
           
-            <li> <%= link_to image_tag(product.image, width: '200', height: '100'), product %></li>
+          <li> <%= link_to image_tag(product.image, width: '200', height: '100'), product %></li>
 
               <li id="product-name"><%= link_to product.name, product %></li>
               <li id="business-name"><%= product.shop_profile.business_name %></li>
@@ -34,13 +34,13 @@
                  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></div>
        
 
-            <% end %>
+          <% end %>
 
         </div>
        
-        <% end %>
+      <% end %>
   
-    <div>
+    </div>
 
 
 </div>

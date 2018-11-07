@@ -9,6 +9,18 @@
     width: 100vw;
 }
 
+body.pages.welcome footer {
+    position: fixed;
+}
+
+body.pages.contact footer {
+    position: fixed;
+}
+
+body.pages.about footer {
+    position: fixed;
+}
+
 #view-all {
     background: white;
     opacity: 0.7;
@@ -25,13 +37,14 @@
 }
 
 
-#about-page {
+#footer-pages {
     font-family: 'Barlow Condensed', sans-serif;
     text-align: center;
     width: 50vw;
     margin-top: 40px;
 }
 
-#about-page h1 {
+#footer-pages h1 {
     color: #FF520b;
 }
+

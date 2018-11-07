@@ -4,9 +4,11 @@
    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
  </head>
  <body>
-   <h1>YAY! You have purchased a <%= @product.name %>.</h1>
+   <h2>Congratulations on your purchase!</h2>
+   <h3>You have purchased <%= @product.name %> from <%= @product.shop_profile.business_name %> </h3>
    <p>
      Your card has been charged <%= number_to_currency(@product.price/100) %>
    </p>
+      <table data-mysignature-version="2018-11-07T03:19:25.028Z | 0" cellspacing="0" width="500" cellpadding="0" border="0"><tr>  <td style="border-left:3px solid;vertical-align: top;border-color:#ff9a31;padding:0 0 0 8px;" valign="top"><table cellspacing="0" cellpadding="0" border="0" style="line-height: 1.4;font-family:Verdana, Geneva, sans-serif;font-size:90%;color: #000001;"><tr><td><span style="font: 1.2em Verdana, Geneva, sans-serif;color:#ff9a31;">Laurence Dibah</span><span style="font-family:Verdana, Geneva, sans-serif;color: #000001;">&nbsp;&nbsp;President of Global Sales</span></td></tr><tr><td style="padding: 5px 0;"><div style="font-family:Verdana, Geneva, sans-serif;color: #000001;"> All Good brew&nbsp;|&nbsp;Sales </div></td></tr>  <tr><td><span style="font-family:Verdana, Geneva, sans-serif;color:#ff9a31;">p:&nbsp;</span><span><a style="font-family:Verdana, Geneva, sans-serif;color:#000001;" href="tel:(03) 9888 8888">(03) 9888 8888</a></span></td></tr>   <tr><td><span style="font-family:Verdana, Geneva, sans-serif;color:#ff9a31;">m:&nbsp;</span><span><a style="font-family:Verdana, Geneva, sans-serif;color:#000001;" href="tel:+61 0432 444 666">+61 0432 444 666</a></span></td></tr>   <tr><td><span style="font-family:Verdana, Geneva, sans-serif;color:#ff9a31;">w:&nbsp;</span><span style="font-family:Verdana, Geneva, sans-serif;"><a href="http://www.allgoodbrew.com" style="color:#000001;[object Object]" target="_blank">www.allgoodbrew.com</a></span></td></tr>   <tr><td><span style="font-family:Verdana, Geneva, sans-serif;color:#ff9a31;">e:&nbsp;</span><span><a href="mailto:laurence@allgoodbrew.com" style="font-family:Verdana, Geneva, sans-serif;color:#000001;" target="_blank">laurence@allgoodbrew.com</a></span></td></tr>      </table></td></tr></table><table class="branding" cellspacing="0" cellpadding="0" border="0"><tr><td style="padding:15px 0 0 0;"></td></tr><tr><td style="border-top: 1px solid #eeeeee;padding-top: 5px;font-size:10px;font-family: Arial;"></td></tr></table>
  </body>
 </html>

@@ -12,6 +12,7 @@
 #title {
     text-align: center;
     font-size: 35px;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 #all-products {
@@ -30,6 +31,7 @@
     width: 250px;
     height: 350px;
     margin-bottom: 5px;
+    overflow: scroll;
 }
 
 #product li {
@@ -107,4 +109,8 @@
 
 #quantity {
     font-size: 17px;
+}
+
+body.products.index footer {
+    position: fixed;
 }

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#welcome'
+  get '/contact', to: 'pages#contact'
   get '/about', to: 'pages#about'
   get '/profile', to: 'shop_profiles#edit'
   get '/profile/products', to: 'shop_profiles#shop_products'

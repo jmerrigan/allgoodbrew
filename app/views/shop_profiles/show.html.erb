@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 <div class="shops">
   <div id=all-shops>
-    <div id="shop">
-      <li id="shop-name"><%= link_to @shop_profile.business_name, @shop_profile%></li>
+    <div id="shop-view">
+      <li id="shop-name-view"><%=  @shop_profile.business_name %></li>
+      <br>
       <li id="location"><%= @shop_profile.location %></li>            
       <li id="about"><%= @shop_profile.about %></li>
       <li id="contact"><%= @shop_profile.contact_number %></li>
-       
+       <br>
     <% if current_user == @shop_profile.user %>
       <div id="edit"> <%= link_to 'edit', edit_shop_profile_path(@shop_profile)%> </div>
     <% end %>
@@ -22,11 +23,11 @@
       <p><%= link_to 'My Products', profile_products_path %></p> 
     <% else %>
   </div>  
-  <h3 id="title">Products</h3>
+  <p id="title">Products</p>
   <br><br>
     <div id="all-products">
-      <div id="product">
-        <% @shop_profile.products.each do |product| %>
+      <% @shop_profile.products.each do |product| %>
+        <div id="product">
           <li> <%= link_to image_tag(product.image, width: '100'), product %></li>
           <li id="product-name"><%= link_to product.name, product %></li>
           <li id="price"><%= product.price %></li>
@@ -34,8 +35,8 @@
           <li id="business-name"><%= product.shop_profile.business_name %></li>
           <li id="style"><%= product.style.name %></li>
           <li id="description"><%= product.description %></li>
+        </div>  
         <% end %>
-      </div>
     </div>
   <% end %>
 
