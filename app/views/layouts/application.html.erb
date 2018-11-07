@@ -11,44 +11,48 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-  <div id="wrapper">
-    <nav>
-      <div id="logo">
-        <a href="/"><img src="/assets/agb-logo-orange.svg"></a>
-      </div>
-    
-    
-       <div id="search">
-        <%= form_tag(products_search_path, method: :get, :class => "search-box") do %>
-          <%= text_field_tag(:search, params[:search], placeholder: "Search...", :class => "search-box-input") %>
-        <% end %>
+
+    <div id="nav-yeild">
+
+      <nav>
+
+        <div id="logo">
+          <a href="/"><img src="/assets/agb-logo-orange.svg"></a>
+        </div>
+      
+        <div id="search">
+          <%= form_tag(products_search_path, method: :get, :class => "search-box") do %>
+            <%= text_field_tag(:search, params[:search], placeholder: "Search...", :class => "search-box-input") %>
+          <% end %>
         </div>
 
-
-      <div class="nav-buttons">
-      <% if user_signed_in? %>
-    
-              <%= link_to('LOGOUT', destroy_user_session_path, method: :delete, :class => "button") %> 
-              <%= link_to 'MY PURCHASES', mypurchases_path, :class => "button" %> 
+        <div id="nav-buttons">
+          <% if user_signed_in? %>
+            <%= link_to('LOGOUT', destroy_user_session_path, method: :delete, :class => "button") %> 
+            <%= link_to 'MY PURCHASES', mypurchases_path, :class => "button" %> 
             <% unless current_user.shop_profile.nil? %> 
-                <%= link_to 'MY SHOP', shop_profile_path([current_user.shop_profile]), :class => "button" %> 
-              <% else %>
-                <%= link_to 'BREW A SHOP', edit_shop_profile_path(current_user), :class => "button" %>
-              <% end %>
-      <% else %>
-            <%= link_to('LOGIN', new_user_session_path, :class => "button")  %>        
-      <% end %>
-      </div>
-   </nav>
+              <%= link_to 'MY SHOP', shop_profile_path([current_user.shop_profile]), :class => "button" %> 
+            <% else %>
+              <%= link_to 'BREW A SHOP', edit_shop_profile_path(current_user), :class => "button" %>
+            <% end %>
+          <% else %>
+              <%= link_to('LOGIN', new_user_session_path, :class => "button")  %>        
+          <% end %>
+        </div>
 
-    <div id="yield">
-        <%= yield %>
+      </nav>
+
+      <div id="yield">
+          <%= yield %>
+      </div>
+    
     </div>
-  </div>
+
     <footer>
 
       <h3 id="logo-footer">ALL GOOD BREW ©</h3>
-      <div id="footer-pages">
+
+      <div id="footer-links">
         <%= link_to 'About Us', about_path, :class => "footer-link"  %>
         <%= link_to 'Contact Us', contact_path, :class => "footer-link"  %>
       </div>
@@ -56,4 +60,5 @@
     </footer>
 
   </body>
+
 </html>

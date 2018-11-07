@@ -1,14 +1,16 @@
 <div class="products">
-<h3 id="title">Your purchases</h3>
-<br><br>
+
+    <h3 class="title">Your purchases</h3>
+    <br><br>
+
     <div id="orders">
         <% current_user.orders.each do |order| %>
-            <li id="product-name"><%= order.product_title %></li>
-            <li id="business-name"><%= order.shop_profile.business_name %></li>
-            <li id="price"><%= number_to_currency(order.product_cost / 100.0) %></li>
+            <li class="product-name"><%= order.product_title %></li>
+            <li class="business-name"><%= order.shop_profile.business_name %></li>
+            <li class="price"><%= number_to_currency(order.product_cost / 100.0) %></li>
             <li><%= order.created_at.strftime("%d/%m/%Y")%>
-          
             <br><br>
         <% end %>
     </div>
+
 </div>

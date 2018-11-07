@@ -29,8 +29,6 @@ html {
  body {
      position: relative;
      margin: 0;
-     min-height: 100%
-     /* padding-bottom: 40px; */
      background: white;
  }
 
@@ -42,11 +40,10 @@ html {
      margin-top: 30px;
  }
 
- #wrapper {
+ #nav-yeild {
      min-height: 100vh;
      margin: 0 auto;
      padding-bottom: 6vh;
-     
  }
 
  nav {
@@ -55,7 +52,7 @@ html {
      grid-template-columns: 3(1fr);
  }
 
- .nav-buttons {
+ #nav-buttons {
      grid-column-start: 3;
      grid-column-end: 4;
      display: flex;
@@ -92,11 +89,7 @@ html {
     margin-right: 5px;
     letter-spacing: 0.5px;
 }
-/* .button:hover {
-    background-color: white;
-    color: #FF520b;
-    text-decoration: none;
-} */
+
 .button:active {
 	position:relative;
     top:1px;
@@ -112,7 +105,6 @@ html {
 .button a:visited {
     text-decoration: none;
     color: white;
-   
 }
 
 .nav-buttons a:hover {
@@ -168,7 +160,6 @@ html {
 #remember {
     display: flex;
     justify-content: space-around;
-
 }
 
 #devise-links a {
@@ -204,7 +195,7 @@ footer {
 
 #footer-links {
     padding-right: 5%;
-    width: 200px;
+    width: 300px;
 }
 
 .footer-link {

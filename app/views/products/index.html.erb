@@ -1,46 +1,43 @@
-<p id="notice"><%= notice %></p>
-
 <div class="products">
 
-  <h1 id="title">Products</h1>
+  <h1 class="title">Products</h1>
 
   <br><br>
 
-    <div id="all-products">
-  
-      <% @products.each do |product| %>
+  <div class="all-products">
 
-        <div id="product">
-          
-          <li> <%= link_to image_tag(product.image, width: '200', height: '100'), product %></li>
+    <% @products.each do |product| %>
 
-              <li id="product-name"><%= link_to product.name, product %></li>
-              <li id="business-name"><%= product.shop_profile.business_name %></li>
-              <li id="style"><%= product.style.name %></li>
-              <li id="description"><%= product.description %></li>
-               <% if product.quantity > 5 %>
-                <li id="quantity">In stock!<li>
-                <% elsif product.quantity <= 0%>
-                <li id="quantity">Sold out</li>
-                <% else %>
-                <li id="quantity">Hurry, kegs running low!</li>
-              <% end %>
+      <div class="product">
+        
+        <li><%= link_to image_tag(product.image, width: '200', height: '100'), product %></li>
 
-              <li id="price"><%= number_to_currency(product.price/100.0) %></li>
-              <% if current_user == product.shop_profile.user %>
-                <li id="quantity">Qty: <%= product.quantity %><li>
-                
-                <div id="edit-product"><%= link_to 'Edit |', edit_product_path(product) %>
-                 <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-       
+        <li class="product-name"><%= link_to product.name, product %></li>
+        <li class="business-name"><%= product.shop_profile.business_name %></li>
+        <li class="style"><%= product.style.name %></li>
+        <li class="description"><%= product.description %></li>
 
-          <% end %>
+        <% if product.quantity > 5 %>
+          <li class="quantity">In stock!<li>
+        <% elsif product.quantity <= 0%>
+          <li class="quantity">Sold out</li>
+        <% else %>
+          <li class="quantity">Hurry, kegs running low!</li>
+        <% end %>
 
-        </div>
-       
-      <% end %>
-  
-    </div>
+        <li class="price"><%= number_to_currency(product.price/100.0) %></li>
+        <% if current_user == product.shop_profile.user %>
+          <li class="quantity">Qty: <%= product.quantity %><li>
+      
+          <div class="edit-product"><%= link_to 'Edit |', edit_product_path(product) %>
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        <% end %>
+
+      </div>
+      
+    <% end %>
+
+  </div>
 
 
 </div>

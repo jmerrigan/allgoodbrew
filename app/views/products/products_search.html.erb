@@ -1,20 +1,29 @@
 <div class="products">
-  <div id="all-products">
+
+  <div class="all-products">
+
     <% @products.each do |prod| %>
       <% prod.each do |product| %>
-        <div id="product">
+
+        <div class="product">
+
             <li> <%= link_to image_tag(product.image, width: '100'), product %></li>
-            <li id="product-name"><%= link_to product.name, product %></li>
-            <li id="price"><%= number_to_currency(product.price/100.0) %></li>
-            <li id="business-name"><%= product.shop_profile.business_name %></li>
-            <li id="style"><%= product.style.name %></li>
+            <li class="product-name"><%= link_to product.name, product %></li>
+            <li class="price"><%= number_to_currency(product.price/100.0) %></li>
+            <li class="business-name"><%= product.shop_profile.business_name %></li>
+            <li class="style"><%= product.style.name %></li>
             <li><%= product.description %></li>
+
             <% if current_user == product.shop_profile.user %>
               <li><%= link_to 'Edit', edit_product_path(product) %></li>
               <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
             <% end %>
+
         </div>
+
       <% end %>
     <% end %>
+
   </div>
+
 </div>

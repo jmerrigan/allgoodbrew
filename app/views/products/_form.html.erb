@@ -2,6 +2,7 @@
 
   <h2>Edit Product</h2>
   <br>
+
   <%= form_with(model: product, local: true) do |form| %>
     <% if product.errors.any? %>
       <div id="error_explanation">
@@ -10,10 +11,10 @@
         <ul>
         <% product.errors.full_messages.each do |message| %>
           <li><%= message %></li>
-        <% end %>
+    <% end %>
         </ul>
       </div>
-    <% end %>
+  <% end %>
 
     <div class="field">
       <%= form.label :name %>

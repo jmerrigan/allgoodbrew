@@ -1,43 +1,51 @@
-<p id="notice"><%= notice %></p>
 <div class="shops">
-  <div id=all-shops>
+
+  <div class="all-shops">
+
     <div id="shop-view">
+
       <li id="shop-name-view"><%=  @shop_profile.business_name %></li>
       <br>
-      <li id="location"><%= @shop_profile.location %></li>            
-      <li id="about"><%= @shop_profile.about %></li>
-      <li id="contact"><%= @shop_profile.contact_number %></li>
+      <li class="location"><%= @shop_profile.location %></li>            
+      <li class="about"><%= @shop_profile.about %></li>
+      <li class="contact"><%= @shop_profile.contact_number %></li>
        <br>
-    <% if current_user == @shop_profile.user %>
-      <div id="edit"> <%= link_to 'edit', edit_shop_profile_path(@shop_profile)%> </div>
-    <% end %>
+      <% if current_user == @shop_profile.user %>
+        <div class="edit"> <%= link_to 'edit', edit_shop_profile_path(@shop_profile)%> </div>
+      <% end %>
+
     </div>
+
   </div>
 
-    <br>
+  <br>
 
-  <div id="edit-links">
+  <div class="edit-links">
     <% if current_user == @shop_profile.user %>
       <p><%= link_to 'New Product', new_product_path %></p>
       <p><%= link_to 'My Shop Orders', profile_orders_path %></p>
       <p><%= link_to 'My Products', profile_products_path %></p> 
     <% else %>
-  </div>  
-  <p id="title">Products</p>
-  <br><br>
-    <div id="all-products">
-      <% @shop_profile.products.each do |product| %>
-        <div id="product">
-          <li> <%= link_to image_tag(product.image, width: '100'), product %></li>
-          <li id="product-name"><%= link_to product.name, product %></li>
-          <li id="price"><%= product.price %></li>
-          <li><%= product.quantity %></li>
-          <li id="business-name"><%= product.shop_profile.business_name %></li>
-          <li id="style"><%= product.style.name %></li>
-          <li id="description"><%= product.description %></li>
-        </div>  
-        <% end %>
-    </div>
+      </div> 
+
+      <p class="title">Products</p>
+      <br><br>
+
+      <div class="all-products">
+        <% @shop_profile.products.each do |product| %>
+          <div class="product">
+            <li> <%= link_to image_tag(product.image, width: '100'), product %></li>
+            <li class="product-name"><%= link_to product.name, product %></li>
+            <li class="price"><%= product.price %></li>
+            <li><%= product.quantity %></li>
+            <li class="business-name"><%= product.shop_profile.business_name %></li>
+            <li class="style"><%= product.style.name %></li>
+            <li class="description"><%= product.description %></li>
+          </div>  
+          <% end %>
+
+      </div>
+
   <% end %>
 
 </div>
