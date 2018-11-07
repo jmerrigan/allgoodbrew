@@ -10,20 +10,30 @@
       <li id="business-name"><%= @product.shop_profile.business_name %></li>
       <li id="style"><%= @product.style.name %></li>
       <li id="description"><%= @product.description %></li>
-      <li id="quantity">Qty: <%= @product.quantity %><li>
-      <li id="price"><%= number_to_currency(@product.price/100.0) %></li>
-      <% if current_user == @product.shop_profile.user %>
-        <li><%= link_to 'Edit', edit_product_path(@product) %></li>
-        <li><%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+           <% if @product.quantity > 5 %>
+                <li id="quantity">In stock!<li>
+                <% elsif @product.quantity <= 0%>
+                <li id="quantity">Sold out</li>
+                <% else %>
+                <li id="quantity">Hurry, kegs running low!</li>
+              <% end %>
 
-    <% end %>
+              <li id="price"><%= number_to_currency(@product.price/100.0) %></li>
+              <% if current_user == @product.shop_profile.user %>
+                <li id="quantity">Qty: <%= @product.quantity %><li>
+                
+                <div id="edit-product"><%= link_to 'Edit |', edit_product_path(@product) %>
+                 <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+       
+
+             <% end %>
 
           
-  <br><br>
+
 
     <div id="payment">
       <% unless current_user == @product.shop_profile.user %>
-        
+        <% if @product.quantity > 0 %>
         <%= form_tag charges_path do %>
 
           <%= hidden_field_tag(:product_id, @product.id) %>
@@ -46,7 +56,7 @@
                   data-currency="AUD"
                   data-locale="auto"></script>
         <% end %>
-
+      <% end %>
       <% end %>
       </div>
     </div>
