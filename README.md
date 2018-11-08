@@ -2,15 +2,15 @@
 
 Link to our app
 
-    - [Link to App](https://fierce-hollows-41698.herokuapp.com/)
+[Link to App](https://fierce-hollows-41698.herokuapp.com/)
     
 Link to our GitHub repository
 
-    - [Link to GitHub Repository](https://github.com/jmerrigan/allgoodbrew)
+[Link to GitHub Repository](https://github.com/jmerrigan/allgoodbrew)
     
 ### ABOUT ALL GOOD BREW ###
 
-    All Good Brew has been designed to allow craft breweries and home breweries to promote and sell their wares and for customers to be able to buy them. Those who are buyers can also sell and vice versa. The app has been designed to follow a principle of simplicity and ease of use.
+All Good Brew has been designed to allow craft breweries and home breweries to promote and sell their wares and for customers to be able to buy them. Those who are buyers can also sell and vice versa. The app has been designed to follow a principle of simplicity and ease of use.
 
 ### SHORT ANSWER QUESTIONS ###
 
