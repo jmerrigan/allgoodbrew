@@ -208,3 +208,10 @@ body.sessions.new footer {
     position: fixed;
 }
 
+
+@media only screen and (max-width: 600px) {
+    nav {
+        display: inline-block;
+        margin-left: 17vw;
+    }
+}
