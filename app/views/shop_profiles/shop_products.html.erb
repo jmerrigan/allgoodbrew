@@ -13,6 +13,8 @@
                 <li class="business-name"><%= product.shop_profile.business_name %></li>
                 <li class="style"><%= product.style.name %></li>
                 <li class="description"><%= product.description %></li>
+                <div class="edit-product"><%= link_to 'Edit |', edit_product_path(product) %>
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></div>
             </div>
         <% end %>
 
