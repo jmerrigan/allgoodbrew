@@ -68,11 +68,11 @@
 }
 
 .description {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
     color: black;
     font-size: 15px;
     text-align: center;
+
 }
 
 .price {
@@ -93,6 +93,7 @@
 
 .edit-product {
     word-spacing: 5px;
+    text-align: center;
 }
 
 .edit-product a {
